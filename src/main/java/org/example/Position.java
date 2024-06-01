@@ -20,9 +20,7 @@ public class Position implements Comparable<Position>, Group<Position> {
 
     @Override
     public int compareTo(Position o) {
-        double thisDistance = Math.sqrt(this.x * this.x + this.y * this.y);
-        double oDistance = Math.sqrt(o.x * o.x + o.y * o.y);
-        return Double.compare(thisDistance, oDistance);
+        return Integer.compare(this.x + this.y, o.x + o.y);
     }
 
     @Override
