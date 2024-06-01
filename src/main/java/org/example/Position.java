@@ -2,7 +2,11 @@ package org.example;
 
 
 import no.uib.ii.algebaric_structures.Group;
+import no.uib.ii.annotations.Axiom;
 import no.uib.ii.annotations.InheritAxioms;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @InheritAxioms
 public class Position implements Comparable<Position>, Group<Position> {
@@ -16,7 +20,9 @@ public class Position implements Comparable<Position>, Group<Position> {
 
     @Override
     public int compareTo(Position o) {
-        return Integer.compare(this.x + this.y, o.x + o.y);
+        double thisDistance = Math.sqrt(this.x * this.x + this.y * this.y);
+        double oDistance = Math.sqrt(o.x * o.x + o.y * o.y);
+        return Double.compare(thisDistance, oDistance);
     }
 
     @Override

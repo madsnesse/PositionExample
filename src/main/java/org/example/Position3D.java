@@ -26,7 +26,7 @@ public class Position3D extends Position {
     }
 
     @Override
-    public Position3D inverse() {
+    public Position inverse() {
         Position p = new Position(this.getX(), this.getY()).inverse();
         return new Position3D(p.getX(), p.getY(), -this.z);
     }
